@@ -32,7 +32,7 @@ Handling a massive volume of customer support tickets manually can be overwhelmi
 
 | Role | Name |
 | :--- | :--- |
-| **Team Lead** | K Vellaturai |
+| **Team Lead** | K Velladurai |
 | **Member** | C Preethik Raj |
 | **Member** | Mukesh S |
 | **Member** | Dharun B |
