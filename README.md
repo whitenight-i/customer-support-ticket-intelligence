@@ -1,44 +1,55 @@
-# customer-support-ticket-intelligence
-Customer Support Ticket Priority Prediction and Automated Assignment System Using Agentforce
+# Customer Support Ticket Priority Prediction and Automated Assignment System Using Agentforce
+
 Hey there! 👋 Welcome to my repository. This project is part of my hands-on learning and implementation with Salesforce and Agentforce. Here, I've built an intelligent support ticket routing and prioritization system that minimizes manual work for support teams.
 
-💡 What this project is about?
-Handling a massive volume of customer support tickets manually can be overwhelming. To solve this, I designed an automated system using Salesforce Flow and Agentforce that reads incoming support tickets, analyzes what the customer is facing, predicts the priority (High, Medium, or Low), creates urgent tasks automatically, and routes them to the right support staff—all through a conversational interface!
+## 💡 What this project is about?
+Handling a massive volume of customer support tickets manually can be overwhelming. To solve this, I designed an automated system using **Salesforce Flow** and **Agentforce** that reads incoming support tickets, analyzes what the customer is facing, predicts the priority (High, Medium, or Low), creates urgent tasks automatically, and routes them to the right support staff—all through a conversational interface!
 
-🛠️ How I Built It (Key Components)
-Salesforce Flow (Auto-Launched): The core backend engine that fetches account and ticket details, runs decision logic based on keywords, and handles record creations.
+---
 
-Keyword-Based Intelligence:
+## 🛠️ How I Built It (Key Components)
+* **Salesforce Flow (Auto-Launched):** The core backend engine that fetches account and ticket details, runs decision logic based on keywords, and handles record creations.
+* **Keyword-Based Intelligence:** 
+  * *High Priority:* Triggers on keywords like "urgent", "not working", or "failure".
+  * *Medium Priority:* Triggers on "issue", "slow", or "delay".
+  * *Low Priority:* Default catch-all category.
+* **Automated Task Generation:** For high-priority tickets, the system instantly creates an "Urgent Ticket Handling" task linked to the ticket and assigns a Senior Support Agent.
+* **Agentforce Subagent:** Configured a conversational subagent (`Support Ticket Priority Analysis`) so users can interact naturally to check ticket statuses and get instant automated feedback.
 
-High Priority: Triggers on keywords like "urgent", "not working", or "failure".
+---
 
-Medium Priority: Triggers on "issue", "slow", or "delay".
+## 📂 Project Structure & Workflow
+1. **Get Account & Ticket:** Takes the account name as input, retrieves the latest ticket, and stores the IDs.
+2. **Analyze Description:** Evaluates the ticket description using decision elements.
+3. **Set Priority & Assign Tasks:** Automatically updates priority levels, creates follow-up tasks for urgent issues, and sets appropriate response messages.
+4. **Agentforce Action:** Connects the flow to the agent for seamless user interaction.
 
-Low Priority: Default catch-all category.
+---
 
-Automated Task Generation: For high-priority tickets, the system instantly creates an "Urgent Ticket Handling" task linked to the ticket and assigns a Senior Support Agent.
+## 👥 Team Information / Contributors
+* **Project Name:** Customer Support Ticket Priority Prediction and Automated Assignment System
+* **Platform:** Salesforce Developer Org & Agentforce
 
-Agentforce Subagent: Configured a conversational subagent (Support Ticket Priority Analysis) so users can interact naturally to check ticket statuses and get instant automated feedback.
+| Role | Name |
+| :--- | :--- |
+| **Team Lead** | K Vellaturai |
+| **Member** | C Preethik Raj |
+| **Member** | Mukesh S |
+| **Member** | Dharun B |
+| **Member** | Sujith Kumar V |
 
-📂 Project Structure & Workflow
-Get Account & Ticket: Takes the account name as input, retrieves the latest ticket, and stores the IDs.
+---
 
-Analyze Description: Evaluates the ticket description using decision elements.
+## ✨ What I Learned & Achieved
+* Automated the entire ticket prioritization workflow, reducing manual triage time.
+* Successfully bridged Salesforce backend automation (Flows) with modern conversational AI (Agentforce).
+* Handled error-free variable mapping and record creation inside Salesforce Developer Edition.
 
-Set Priority & Assign Tasks: Automatically updates priority levels, creates follow-up tasks for urgent issues, and sets appropriate response messages.
+---
 
-Agentforce Action: Connects the flow to the agent for seamless user interaction.
+## 🚀 Future Improvements
+* Adding advanced SLA monitoring and automated escalation matrices.
+* Expanding keyword dictionaries and custom business rules for better categorization.
+* Building performance analytics dashboards for support trends.
 
-✨ What I Learned & Achieved
-Automated the entire ticket prioritization workflow, reducing manual triage time.
-
-Successfully bridged Salesforce backend automation (Flows) with modern conversational AI (Agentforce).
-
-Handled error-free variable mapping and record creation inside Salesforce Developer Edition.
-
-🚀 Future Improvements
-Adding advanced SLA monitoring and automated escalation matrices.
-
-Expanding keyword dictionaries and custom business rules for better categorization.
-
-Building performance analytics dashboards for support trends.
+*Feel free to check out the screenshots and configurations in this repo. If you have any feedback or want to collaborate, let's connect!*
