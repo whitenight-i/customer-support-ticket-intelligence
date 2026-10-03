@@ -1,18 +1,20 @@
 # Comprehensive Setup & Implementation Guide
 
-This guide provides a detailed breakdown of how to replicate and deploy the **Customer Support Ticket Priority Prediction and Automated Assignment System** using Salesforce Flow and Agentforce.
+This guide provides the complete step-by-step instructions to replicate and deploy the **Customer Support Ticket Priority Prediction and Automated Assignment System** using Salesforce Flow and Agentforce.
 
 ---
 
-## 1. Prerequisites & Environment Setup
-* **Salesforce Developer Edition Org** with Flow Builder and Agentforce enabled.
-* Standard Objects required: `Account`, `Task`, `User`.
-* Custom Object (or simulated equivalent): `Support_Ticket_Intelligence__c` containing a description field (`Description__c`) and a relationship to Account (`Customer__c`).
+## 1. Prerequisites & Custom Object Setup (Step 0)
+Before configuring the automation, ensure your Salesforce Developer Org has the required data structure:
+1. **Custom Object:** Create a custom object named **`Support_Ticket_Intelligence__c`**.
+2. **Relationship Field:** Add a Lookup or Master-Detail relationship field named **`Customer__c`** pointing to the standard **`Account`** object.
+3. **Description Field:** Ensure a text or text-area field exists to store the ticket issue descriptions.
+4. **Standard Objects:** Verify access to standard objects: `Account`, `Task`, and `User`.
 
 ---
 
-## 2. Variables Initialization
-Before building the flow, create the following variables in Salesforce Flow Builder:
+## 2. Variables Initialization in Flow Builder
+Create the following variables in Salesforce Flow Builder before building the logic:
 * `varAccountName` (Data Type: Text, Input/Output: Available for input)
 * `varAccountId` (Data Type: Text, Input/Output: Available for output)
 * `varTicketId` (Data Type: Text, Input/Output: Available for output)
@@ -71,7 +73,7 @@ Before building the flow, create the following variables in Salesforce Flow Buil
 ---
 
 ## 4. Agentforce Subagent Integration
-1. Go to **Agentforce Builder** and create a new Subagent named **Support Ticket Priority Analysis**.
+1. Go to **Agentforce Builder** in Salesforce Setup and create a new Subagent named **Support Ticket Priority Analysis**.
 2. Set the **Classification Description** and **Scope** to handle support ticket evaluations strictly.
-3. Link the flow action, mapping `varAccountName` as input and the response variables (`varActionMessage`, `varPriorityLevel`, `varAssignedTo`, `varTicketId`) as outputs.
-4. Test using the **Conversation Preview** panel by entering an account name.
+3. Link the flow action, mapping `varAccountName` as input and the response variables (`varActionMessage`, `varPriorityLevel`, `varAssignedTo`, `varTicketId`, `varAccountId`) as outputs.
+4. Test the implementation using the **Conversation Preview** panel by entering a valid account name.
